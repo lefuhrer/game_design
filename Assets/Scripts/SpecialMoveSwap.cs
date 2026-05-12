@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using static StarterAssets.FirstPersonController;
 
@@ -16,7 +15,6 @@ public class SpecialMoveSwap : MonoBehaviour
     [SerializeField]
     private List<FirstPersonController> _controllers;
 
-
     [SerializeField]
     private List<Image> _images;
 
@@ -26,8 +24,6 @@ public class SpecialMoveSwap : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
     }
-
-
 
     private void Update()
     {

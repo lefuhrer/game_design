@@ -13,7 +13,6 @@ public class CharacterSwap : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera _playerFollowCamera;
 
-
     private int _characterIndex;
 
     private GameObject _currentCharacter;
@@ -25,7 +24,6 @@ public class CharacterSwap : MonoBehaviour
     private PlayerInput _playerInput;
 
     private AudioSource _audioSource;
-
 
     private void Awake()
     {
@@ -45,6 +43,8 @@ public class CharacterSwap : MonoBehaviour
     {
         Transform playerCameraRoot = _currentCharacter.transform.Find("PlayerCameraRoot");
         _playerFollowCamera.Follow = playerCameraRoot;
+
+        UpdateCurrentCharacter();
     }
 
     private void Update()
@@ -75,7 +75,6 @@ public class CharacterSwap : MonoBehaviour
     private void UpdateCurrentCharacter()
     {
         input = _currentCharacter.GetComponent<StarterAssetsInputs>();
-
 
         _firstPersonController = _currentCharacter.GetComponent<FirstPersonController>();
         _firstPersonController.enabled = true;
